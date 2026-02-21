@@ -36,11 +36,15 @@ module "virtual_network" {
 
 ### Versioning
 
-Use semantic version tags (e.g., `v1.0.0`) in `ref=` for predictable deployments:
+This repo uses [Semantic Versioning](https://semver.org/) (SemVer). Pin modules to a tagged version:
 
 ```hcl
 source = "git::https://github.com/your-org/azure-terraform-modules//modules/virtual-network?ref=v1.0.0"
 ```
+
+- **v1.0.0** – MAJOR.MINOR.PATCH. Always use an exact tag; version ranges (`~>`, `>=`) are not supported with Git source.
+- See [VERSIONING.md](VERSIONING.md) for release process, update workflow, and changelog maintenance.
+- See [CHANGELOG.md](CHANGELOG.md) for release history.
 
 ## Repository Structure
 
