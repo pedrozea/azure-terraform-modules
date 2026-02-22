@@ -22,26 +22,10 @@ variable "address_space" {
   type        = list(string)
 }
 
-variable "dns_servers" {
-  description = "List of DNS server IP addresses for the virtual network."
-  type        = list(string)
-  default     = []
-}
-
 variable "subnets" {
-  description = <<-EOT
-    Map of subnets to create.
-    Key = subnet name.
-    Value = object with address_prefix and optional delegation settings.
-    Set delegation_name to empty string or omit for standard subnets.
-  EOT
-  type = map(object({
-    address_prefix     = string
-    delegation_name    = optional(string)
-    delegation_service = optional(string, "Microsoft.Network/networkInterfaces")
-    delegation_actions = optional(list(string), ["Microsoft.Network/networkInterfaces/*"])
-  }))
-  default = {}
+  description = "Map of subnets to create. Key = subnet name, Value = address prefix."
+  type        = map(string)
+  default     = {}
 }
 
 variable "tags" {
