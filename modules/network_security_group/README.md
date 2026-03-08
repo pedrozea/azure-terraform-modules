@@ -6,7 +6,7 @@ Creates an Azure Network Security Group with configurable rules and optional sub
 
 ```hcl
 module "nsg" {
-  source = "git::https://github.com/your-org/azure-terraform-modules//modules/network-security-group?ref=v1.0.0"
+  source = "git::https://github.com/your-org/azure-terraform-modules//modules/network_security_group?ref=v1.0.0"
 
   name                = "lab-nsg"
   resource_group_name = "rg-lab"

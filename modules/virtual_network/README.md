@@ -6,7 +6,7 @@ Creates an Azure Virtual Network with configurable subnets. Supports optional su
 
 ```hcl
 module "virtual_network" {
-  source = "git::https://github.com/your-org/azure-terraform-modules//modules/virtual-network?ref=v1.0.0"
+  source = "git::https://github.com/your-org/azure-terraform-modules//modules/virtual-_etwork?ref=v1.0.0"
 
   name                = "lab-vnet"
   resource_group_name = "rg-lab"
