@@ -18,11 +18,11 @@ variable "location" {
 }
 
 variable "address_space" {
-  description = "Address space for the Hub VNet (e.g., ['10.0.0.0/16'])."
+  description = "Address space for the Hub Virtual Network"
   type        = list(string)
 }
 
-# --- Variables Específicas del Hub ---
+# --- Hub-specific variables ---
 
 variable "firewall_subnet_prefix" {
   description = "Address prefix for the AzureFirewallSubnet. Minimum /26 is recommended."

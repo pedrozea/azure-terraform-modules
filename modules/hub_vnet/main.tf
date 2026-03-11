@@ -22,7 +22,7 @@ locals {
 
 # Use the virtual-network base module
 module "vnet" {
-  source = "../virtual_network" # Ruta relativa a tu módulo base
+  source = "../virtual_network"
 
   name                = var.name
   resource_group_name = var.resource_group_name
