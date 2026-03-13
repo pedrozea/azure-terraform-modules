@@ -20,7 +20,9 @@ locals {
   final_subnets = merge(local.active_core_subnets, var.extra_subnets)
 }
 
-# Use the virtual-network base module
+# ------------------------------------------------------------------------------
+# Virtual Network - Base Module
+# ------------------------------------------------------------------------------
 module "vnet" {
   source = "../virtual_network"
 

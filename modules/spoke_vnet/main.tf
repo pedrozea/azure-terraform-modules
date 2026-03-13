@@ -4,6 +4,9 @@
 
 # Creates an Azure Spoke Virtual Network
 
+# ------------------------------------------------------------------------------
+# Virtual Network - Base Module
+# ------------------------------------------------------------------------------
 module "vnet" {
   source = "../virtual_network"
 
@@ -15,7 +18,9 @@ module "vnet" {
   tags                = var.tags
 }
 
-# 2. Peering: Spoke -> Hub (IDA)
+# ------------------------------------------------------------------------------
+# Virtual Network Peering - Spoke to Hub
+# ------------------------------------------------------------------------------
 resource "azurerm_virtual_network_peering" "spoke_to_hub" {
   name                         = "peering-${var.name}-to-hub"
   resource_group_name          = var.resource_group_name
@@ -27,7 +32,9 @@ resource "azurerm_virtual_network_peering" "spoke_to_hub" {
   use_remote_gateways = var.use_remote_gateways
 }
 
-# 3. Peering: Hub -> Spoke (VUELTA)
+# ------------------------------------------------------------------------------
+# Virtual Network Peering - Hub to Spoke
+# ------------------------------------------------------------------------------
 resource "azurerm_virtual_network_peering" "hub_to_spoke" {
   name                         = "peering-hub-to-${var.name}"
   resource_group_name          = var.hub_resource_group_name
@@ -38,7 +45,9 @@ resource "azurerm_virtual_network_peering" "hub_to_spoke" {
   allow_gateway_transit = var.allow_gateway_transit
 }
 
-# 4. Route Table (UDR) - "Force traffic to the Firewall"
+# ------------------------------------------------------------------------------
+# Route Table (UDR) - "Force traffic to the Firewall"
+# ------------------------------------------------------------------------------
 resource "azurerm_route_table" "spoke_udr" {
   name                = "rt-${var.name}"
   location            = var.location
@@ -53,7 +62,9 @@ resource "azurerm_route_table" "spoke_udr" {
   }
 }
 
-# 5. Associate the UDR to ALL Spoke subnets automatically
+# ------------------------------------------------------------------------------
+# Subnet Route Table Association - Spoke UDR
+# ------------------------------------------------------------------------------
 resource "azurerm_subnet_route_table_association" "spoke_udr_assoc" {
   # Iterate over the map of subnets returned by the base module
   for_each       = module.vnet.subnet_ids

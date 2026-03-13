@@ -1,0 +1,32 @@
+# ------------------------------------------------------------------------------
+# Azure Bastion Module - Input Variables
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Azure Bastion
+# ------------------------------------------------------------------------------
+variable "name" {
+  description = "The name of the Azure Bastion host."
+  type        = string
+}
+
+variable "location" {
+  description = "The location/region where the Azure Bastion host should be created."
+  type        = string
+}
+
+variable "resource_group_name" {
+  description = "The name of the resource group in which to create the Azure Bastion host."
+  type        = string
+}
+
+variable "subnet_id" {
+  description = "The ID of the subnet where the Azure Bastion host should be created."
+  type        = string
+}
+
+variable "tags" {
+  description = "Tags for the Azure Bastion host"
+  type        = map(string)
+  default     = {}
+}
