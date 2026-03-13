@@ -2,10 +2,6 @@
 # Resource Group Module - Outputs
 # ------------------------------------------------------------------------------
 
-# ------------------------------------------------------------------------------
-# Resource Group Module - Outputs
-# ------------------------------------------------------------------------------
-
 output "id" {
   description = "The ID of the resource group."
   value       = azurerm_resource_group.rg.id

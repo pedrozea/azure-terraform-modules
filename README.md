@@ -6,13 +6,12 @@ Centralized Terraform modules for Azure infrastructure, designed for lab and pro
 
 | Module | Description |
 |--------|-------------|
-| [resource-group](modules/resource-group) | Azure Resource Group |
-| [virtual-network](modules/virtual-network) | Virtual Network with subnets |
-| [network-security-group](modules/network-security-group) | NSG with rules and subnet associations |
-| [network-hub-spoke](modules/network-hub-spoke) | Hub-and-spoke topology with VNet peering |
-| [virtual-machine](modules/virtual-machine) | Linux and Windows VMs |
-| [log-analytics-workspace](modules/log-analytics-workspace) | Log Analytics workspace |
-| [azure-firewall](modules/azure-firewall) | Azure Firewall |
+| [resource_group](modules/resource_group) | Azure Resource Group |
+| [virtual_network](modules/virtual_network) | Virtual Network with subnets |
+| [hub_vnet](modules/hub_vnet) | Hub-and-spoke topology with VNet peering |
+| [spoke_vnet](modules/spoke_vnet) | Hub-and-spoke topology with VNet peering |
+| [virtual_machine](modules/virtual_machine) | Linux and Windows VMs |
+| [azure_bastion](modules/azure_bastion) | Azure Bastion |
 
 ## Quick Start
 

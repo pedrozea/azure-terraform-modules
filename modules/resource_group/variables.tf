@@ -2,10 +2,6 @@
 # Resource Group Module - Input Variables
 # ------------------------------------------------------------------------------
 
-# ------------------------------------------------------------------------------
-# Resource Group Module - Input Variables
-# ------------------------------------------------------------------------------
-
 variable "name" {
   description = "Name of the resource group."
   type        = string
