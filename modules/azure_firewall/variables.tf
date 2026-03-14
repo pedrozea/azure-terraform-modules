@@ -22,24 +22,6 @@ variable "subnet_id" {
   type        = string
 }
 
-variable "management_subnet_id" {
-  description = "ID of management subnet for forced tunneling (Premium SKU). Null if not used."
-  type        = string
-  default     = null
-}
-
-variable "sku_name" {
-  description = "SKU: AZFW_VNet (standard VNet) or AZFW_Hub (Virtual WAN)."
-  type        = string
-  default     = "AZFW_VNet"
-}
-
-variable "sku_tier" {
-  description = "SKU tier: Standard or Premium."
-  type        = string
-  default     = "Standard"
-}
-
 variable "network_rules" {
   description = "List of network rules. Empty list = no rules created."
   type = list(object({
