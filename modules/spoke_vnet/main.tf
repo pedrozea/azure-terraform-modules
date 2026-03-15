@@ -56,7 +56,7 @@ resource "azurerm_route_table" "spoke_udr" {
 
   route {
     name           = "bypass-fw-for-bastion"
-    address_prefix = var.bastion_subnet_address_prefix
+    address_prefix = var.bastion_subnet_prefix
     next_hop_type  = "VnetLocal"
   }
 
