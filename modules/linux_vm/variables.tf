@@ -17,6 +17,12 @@ variable "resource_group_name" {
   type        = string
 }
 
+variable "tags" {
+  description = "Tags to apply to all resources"
+  type        = map(string)
+  default     = {}
+}
+
 variable "vm_size" {
   description = "Size of the VM"
   type        = string

@@ -21,6 +21,7 @@ resource "azurerm_firewall" "fw" {
   resource_group_name = var.resource_group_name
   sku_name            = "AZFW_VNet"
   sku_tier            = "Standard"
+  tags                = var.tags
 
   ip_configuration {
     name                 = "configuration"
