@@ -55,6 +55,12 @@ resource "azurerm_route_table" "spoke_udr" {
   tags                = var.tags
 
   route {
+    name           = "bypass-fw-for-bastion"
+    address_prefix = var.bastion_subnet_address_prefix
+    next_hop_type  = "VnetLocal"
+  }
+
+  route {
     name                   = "default-to-hub-firewall"
     address_prefix         = "0.0.0.0/0"
     next_hop_type          = "VirtualAppliance"

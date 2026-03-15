@@ -67,3 +67,8 @@ variable "allow_gateway_transit" {
   default     = false
   description = "Set to true in the Hub if you want the Spoke to pass through its Gateway."
 }
+
+variable "bastion_subnet_address_prefix" {
+  description = "Address prefix for the Bastion subnet"
+  type        = string
+}
