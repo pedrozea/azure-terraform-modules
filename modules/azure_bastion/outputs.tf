@@ -20,6 +20,11 @@ output "bastion_sku" {
   value       = azurerm_bastion_host.bastion.sku
 }
 
+output "bastion_nsg" {
+  description = "The ID of the network security group for the Azure Bastion host."
+  value       = azurerm_network_security_group.bastion_nsg.id
+}
+
 # ------------------------------------------------------------------------------
 # Public IP for Azure Bastion
 # ------------------------------------------------------------------------------
