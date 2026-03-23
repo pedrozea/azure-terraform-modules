@@ -25,6 +25,18 @@ variable "subnet_id" {
   type        = string
 }
 
+variable "sku" {
+  description = "The SKU of the Azure Bastion host."
+  type        = string
+  default     = "Basic"
+}
+
+variable "shareable_link_enabled" {
+  description = "Whether to enable shareable link for the Azure Bastion host."
+  type        = bool
+  default     = false
+}
+
 variable "tags" {
   description = "Tags for the Azure Bastion host"
   type        = map(string)
