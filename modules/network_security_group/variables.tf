@@ -32,7 +32,8 @@ variable "security_rules" {
     access                     = string # Allow o Deny
     protocol                   = string # Tcp, Udp, Icmp, o *
     source_port_range          = string
-    destination_port_range     = string
+    destination_port_range     = optional(string)
+    destination_port_ranges    = optional(list(string))
     source_address_prefix      = string
     destination_address_prefix = string
   }))
